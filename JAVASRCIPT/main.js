@@ -3,7 +3,7 @@ function iniciarSesion(){
     let usuario=prompt ("Ingresá tu usuario");
     let password=prompt ("Ingresá tu contraseña");
         if (usuario === "user" && password === "Password"){
-            alert ("Bienvenido");
+            alert ("¡Bienvenidx, que bueno tenerte por acá nuevamente!");
         } else{
             alert ("Los datos ingresados son incorrectos. Ingrese como invitadx o póngase en contacto con nosotros");
         }
@@ -46,14 +46,14 @@ equiposLineaMaxiSys.unshift (" MS905 Mini")
 
 // FUNCION --> PRESUPUESTO // Funciona ok 
 function presupuestoTalleres(){
-    let valorAComparar=prompt("Ingresá tu presupuesto aproximado (entre $50.000 y $200.000) para mostrarte distintas opciones");
+    let valorAComparar=prompt("Ingresá tu presupuesto aproximado (te recomendamos elegir un valor entre $50000 y $160000) para mostrarte distintas opciones");
         if (valorAComparar <= 50000){
             alert("Te recomendamos algún equipo de la línea AL (Autolink): " + equiposLineaAl + ". Podés verlos en la sección de productos.");
         } else if (valorAComparar <= 100000){
             alert ("Te recomendamos algún equipo de la línea MD (MaxiDiag): " + equiposLineaMD + ". Podés verlos en la sección de productos.");
         } else if (valorAComparar <=150000) {
             alert ("Te recomendamos algún equipo de la línea MX (MaxiCheck): " + equiposLineaMX + ". Podés verlos en la sección de productos.");
-        } else if (valorAComparar > 150001){
+        } else if (valorAComparar >= 150001){
             alert ("Te recomendamos algún equipo de la línea MaxiSys: " + equiposLineaMaxiSys + ". Podés verlos en la sección de productos.");
         }
 };
@@ -93,3 +93,5 @@ if (tipoDeCliente){
     modeloDeAuto();
 };
 
+//------------------------------------------------------------------------------------------------------------
+let despedida= alert("Cualquier otra duda escribinos desde la sección de contacto. Estamos para ayudarte.");
