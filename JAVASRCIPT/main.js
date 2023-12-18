@@ -1,13 +1,3 @@
-// // FUNCION --> INICIAR SESION // Funciona ok  
-function iniciarSesion(){
-    let usuario=prompt ("Ingresá tu usuario");
-    let password=prompt ("Ingresá tu contraseña");
-        if (usuario === "user" && password === "Password"){
-            alert ("¡Bienvenidx, que bueno tenerte por acá nuevamente!");
-        } else{
-            alert ("Los datos ingresados son incorrectos. Ingrese como invitadx o póngase en contacto con nosotros");
-        }
-};
 // // FUNCION --> INVITADX // Funciona ok 
 function invitadx(){
     let nombre =prompt("Bienvenidx a nuestro sitio, ¿Cuál es tu nombre?");
@@ -17,6 +7,26 @@ function invitadx(){
         alert ("Bienvenidx " + nombre + " vamos a descubrir el scanner perfecto para vos");
     }
 };
+
+// CICLO FOR - FUNCION --> INICIAR SESION // Funciona ok  
+
+function iniciarSesion(){
+    for (i=0; i<3; i++){
+        let usuario=prompt ("Ingresá tu usuario");
+        let password=prompt ("Ingresá tu contraseña");
+            if (usuario === "user" && password === "Password"){
+                alert ("¡Bienvenidx, que bueno tenerte por acá nuevamente!");
+            } else{
+                alert ("Los datos ingresados son incorrectos. Por favor intente nuevamente.");
+            }
+    };
+    alert ("Ponete en contacto con nosotros para reestablecer tu contraseña. Mientras tanto podés recorrer el sitio como invitadx")
+    let usuarioInvitado= prompt ("Ingresá tu nombre")
+    alert ("Bienvenidx, " + usuarioInvitado)
+};
+
+
+
 //------------------------------------------------------------------------------------------------------------
 // BIENVENIDA // Funciona ok 
 let mensajeBienvenida= confirm("¡Hola! Si ya estás registradx, podés ingresar con tu usuario y contraseña");
@@ -85,13 +95,20 @@ switch (modeloDeAuto) {
 };
 //------------------------------------------------------------------------------------------------------------
 
-// TIPO DE CLIENTES // Funciona ok 
-let tipoDeCliente=confirm("¿Tenés un taller mecánico?");
-if (tipoDeCliente){
-    presupuestoTalleres();
-} else{
-    modeloDeAuto();
+// CICLO WHILE - TIPO DE CLIENTES // Funciona ok 
+
+let tipoDeCliente= prompt ("Estás buscando un equipo para: \nTaller mecánico \nVehículo particular").toUpperCase();
+while(tipoDeCliente != "Taller mecánico" && "Vehículo particular"){
+    alert ("Por favor ingresá 1 si es taller mecánico o 2 si es para un vehículo en particular");
+    tipoDeCliente =prompt ("¿1 o 2?");
+    if (tipoDeCliente == 1){
+        presupuestoTalleres();
+    } else if (tipoDeCliente == 2){
+        modeloDeAuto();
+    } else {
+        alert ("No ingresaste una respuesta válida. Por favor intentalo nuevamente");
+    }   
+    break;
 };
 
-//------------------------------------------------------------------------------------------------------------
 let despedida= alert("Cualquier otra duda escribinos desde la sección de contacto. Estamos para ayudarte.");
